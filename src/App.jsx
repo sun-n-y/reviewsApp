@@ -7,13 +7,19 @@ const App = () => {
 
   const nextPerson = () => {
     setIndex((currentIndex) => {
-      const newIndex = currentIndex + 1;
+      let newIndex = currentIndex + 1;
+      if (newIndex > people.length - 1) {
+        newIndex = 0;
+      }
       return newIndex;
     });
   };
   const prevPerson = () => {
     setIndex((currentIndex) => {
-      const newIndex = currentIndex - 1;
+      let newIndex = currentIndex - 1;
+      if (newIndex < 0) {
+        newIndex = people.length - 1;
+      }
       return newIndex;
     });
   };
